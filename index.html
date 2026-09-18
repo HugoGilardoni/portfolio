@@ -1,101 +1,173 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hugo Jorge Gilardoni - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hugo Jorge Gilardoni — Desarrollador de Software</title>
+<meta name="description" content="Portfolio profesional de Hugo Jorge Gilardoni: desarrollador de software, sys admin, soporte técnico, back office y QA tester. La Plata, Buenos Aires.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header / Hero Section -->
-    <header class="hero">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <h1>Hugo Jorge Gilardoni</h1>
-                <h2 class="roles">
-                    Desarrollador de Software | Sys Admin | Soporte Técnico <br> 
-                    Back Office | QA Tester
-                </h2>
-                <p class="location"><i class="fas fa-map-marker-alt"></i> La Plata, Buenos Aires</p>
-                <div class="contact-info">
-                    <a href="mailto:hugogilardoni2000@gmail.com"><i class="fas fa-envelope"></i> hugogilardoni2000@gmail.com</a>
-                    <a href="tel:+542214371872"><i class="fas fa-phone"></i> +54 221 4371872</a>
-                    <a href="https://www.linkedin.com/in/hugo-jorge-gilardoni-72987a32b/"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                </div>
-            </div>
-            <!-- Si deseas agregar tu foto, reemplaza "foto.jpg" por la ruta de tu imagen -->
-            <div class="hero-image">
-                <div class="image-placeholder">
-                    <i class="fas fa-user-circle"></i>
-                </div>
-            </div>
+<a class="saltar" href="#contenido">Ir al contenido</a>
+
+<header class="portada">
+  <div class="portada-interior">
+
+    <figure class="retrato">
+      <img src="foto.jpg" alt="Retrato de Hugo Jorge Gilardoni" width="1024" height="1024">
+    </figure>
+
+    <div class="presentacion">
+      <p class="lugar">La Plata, Buenos Aires</p>
+      <h1>Hugo Jorge<br>Gilardoni</h1>
+
+      <ul class="roles">
+        <li>Desarrollador de software</li>
+        <li>Sys admin</li>
+        <li>Soporte técnico</li>
+        <li>Back office</li>
+        <li>QA tester</li>
+      </ul>
+
+      <nav class="contacto" aria-label="Datos de contacto">
+        <a class="boton" href="mailto:hugogilardoni2000@gmail.com">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M3 6.5h18v11H3z"></path>
+            <path d="m3.6 7 8.4 6 8.4-6"></path>
+          </svg>
+          <span class="boton-texto">
+            <span class="boton-que">Escribirme</span>
+            <span class="boton-dato">hugogilardoni2000@gmail.com</span>
+          </span>
+        </a>
+
+        <a class="boton" href="tel:+542214371872">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M7 3.5 9.5 8 7.8 9.9c1 2.2 2.6 3.9 4.8 4.9l1.9-1.8 4.5 2.5-.7 3.1c-.2.8-.9 1.4-1.8 1.4C9.3 20 4 14.7 4 6.1c0-.9.6-1.6 1.4-1.8z"></path>
+          </svg>
+          <span class="boton-texto">
+            <span class="boton-que">Llamarme</span>
+            <span class="boton-dato">+54 221 4371872</span>
+          </span>
+        </a>
+
+        <a class="boton" href="https://www.linkedin.com/in/hugo-jorge-gilardoni-72987a32b/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M4 4.5h16v15H4z"></path>
+            <path d="M7.5 10.5v6"></path>
+            <path d="M7.5 7.8v.1"></path>
+            <path d="M11.5 16.5v-6"></path>
+            <path d="M11.5 12.6c0-1.2 1-2.1 2.2-2.1s2.3.9 2.3 2.4v3.6"></path>
+          </svg>
+          <span class="boton-texto">
+            <span class="boton-que">Ver perfil</span>
+            <span class="boton-dato">Linkedin</span>
+          </span>
+        </a>
+      </nav>
+    </div>
+
+  </div>
+</header>
+
+<main id="contenido" class="cuerpo">
+
+  <div class="columna-principal">
+
+    <section class="bloque" aria-labelledby="t-perfil">
+      <h2 id="t-perfil">Perfil profesional</h2>
+      <p class="perfil">
+        Profesional con orientación a la resolución de problemas y la optimización de procesos.
+        Mantengo un aprendizaje constante sobre las innovaciones tecnológicas para aplicarlas en la mejora del rendimiento diario.
+      </p>
+    </section>
+
+    <section class="bloque" aria-labelledby="t-experiencia">
+      <h2 id="t-experiencia">Experiencia laboral</h2>
+
+      <ol class="trayectoria">
+        <li class="puesto">
+          <p class="periodo">Julio 2024 – Noviembre 2025</p>
+          <h3>Desarrollador de software</h3>
+          <p class="empresa">Sierra Maestra</p>
+          <p class="detalle">
+            Participación como programador backend y QA en el desarrollo de una aplicación web de gestión
+            administrativa y ventas.
+          </p>
+          <p class="stack">Desarrollo realizado con Java y Spring Boot.</p>
+        </li>
+
+        <li class="puesto">
+          <p class="periodo">Junio 2024 – Diciembre 2024</p>
+          <h3>Desarrollador de software</h3>
+          <p class="empresa">880 producciones</p>
+          <p class="detalle">
+            Participación como programador backend en una aplicación de transcripción y traducción basada en
+            inteligencia artificial.
+          </p>
+          <p class="stack">Desarrollo realizado en Python para plataforma Windows.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="bloque" aria-labelledby="t-formacion">
+      <h2 id="t-formacion">Formación</h2>
+      <div class="estudio">
+        <h3>Tecnicatura Superior en Desarrollo de Software <span class="resolucion">(Resolución 5847/19)</span></h3>
+        <p class="institucion">Instituto Superior de Formación Técnica Nº 12<br>Crucero A.R.A General Belgrano</p>
+      </div>
+    </section>
+
+  </div>
+
+  <aside class="columna-lateral">
+
+    <section class="bloque" aria-labelledby="t-habilidades">
+      <h2 id="t-habilidades">Habilidades</h2>
+      <ul class="habilidades">
+        <li>Python</li>
+        <li>Java</li>
+        <li>SQL</li>
+        <li>HTML/CSS</li>
+        <li>Docker</li>
+        <li>Linux</li>
+        <li>Software de Gestión</li>
+        <li>Armado de PC</li>
+        <li>Mantenimiento de Hardware</li>
+        <li>Redes</li>
+      </ul>
+    </section>
+
+    <section class="bloque" aria-labelledby="t-idiomas">
+      <h2 id="t-idiomas">Idiomas</h2>
+      <dl class="idiomas">
+        <div>
+          <dt>Español</dt>
+          <dd>Nativo</dd>
         </div>
-    </header>
-
-    <main class="container">
-        <!-- Experiencia Laboral -->
-        <section class="section" id="experiencia">
-            <h3 class="section-title"><i class="fas fa-briefcase"></i> Experiencia Laboral</h3>
-            <div class="timeline">
-                <div class="card">
-                    <h4>Desarrollador de Software & QA</h4>
-                    <span class="company">Sierra Maestra</span>
-                    <span class="date">Julio 2024 - Noviembre 2025</span>
-                    <p>Participación como programador backend y QA en el desarrollo de una aplicación web de gestión administrativa y ventas. Desarrollo realizado con Java y Spring Boot.</p>
-                </div>
-                <div class="card">
-                    <h4>Desarrollador de Software</h4>
-                    <span class="company">880 producciones</span>
-                    <span class="date">Junio 2024 - Diciembre 2024</span>
-                    <p>Participación como programador backend en una aplicación de transcripción y traducción basada en inteligencia artificial. Desarrollo realizado en Python para plataforma Windows.</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="grid-2-cols">
-            <!-- Formación y Educación -->
-            <section class="section" id="formacion">
-                <h3 class="section-title"><i class="fas fa-graduation-cap"></i> Formación</h3>
-                <div class="card">
-                    <h4>Tecnicatura Superior en Desarrollo de Software</h4>
-                    <span class="company">Instituto Superior de Formación Técnica Nº 12</span>
-                    <p class="subtitle">Crucero A.R.A General Belgrano (Resolución 5847/19)</p>
-                </div>
-                
-                <h3 class="section-title" style="margin-top: 2rem;"><i class="fas fa-language"></i> Idiomas</h3>
-                <div class="card languages-card">
-                    <p><strong>Español:</strong> Nativo</p>
-                    <p><strong>Inglés:</strong> Nivel Intermedio</p>
-                </div>
-            </section>
-
-            <!-- Habilidades -->
-            <section class="section" id="habilidades">
-                <h3 class="section-title"><i class="fas fa-code"></i> Habilidades</h3>
-                <div class="skills-container">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Java</span>
-                    <span class="skill-tag">SQL</span>
-                    <span class="skill-tag">HTML/CSS</span>
-                    <span class="skill-tag">Docker</span>
-                    <span class="skill-tag">Linux</span>
-                    <span class="skill-tag">Software de Gestión</span>
-                    <span class="skill-tag">Armado de PC</span>
-                    <span class="skill-tag">Mantenimiento de Hardware</span>
-                    <span class="skill-tag">Redes</span>
-                </div>
-            </section>
+        <div>
+          <dt>Inglés</dt>
+          <dd>Nivel Intermedio</dd>
         </div>
-    </main>
+      </dl>
+    </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Hugo Jorge Gilardoni. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+  </aside>
+
+</main>
+
+<footer class="pie">
+  <p class="pie-nombre">Hugo Jorge Gilardoni</p>
+  <p class="pie-links">
+    <a href="mailto:hugogilardoni2000@gmail.com">hugogilardoni2000@gmail.com</a>
+    <a href="tel:+542214371872">+54 221 4371872</a>
+    <a href="https://www.linkedin.com/in/hugo-jorge-gilardoni-72987a32b/" target="_blank" rel="noopener">Linkedin</a>
+  </p>
+</footer>
 
 </body>
 </html>

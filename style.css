@@ -1,223 +1,444 @@
-/* Variables de diseño - Tema oscuro con cian */
+/* ==========================================================================
+   Portfolio — Hugo Jorge Gilardoni
+   Tipografías: Archivo (títulos e interfaz) + Source Serif 4 (texto)
+   ========================================================================== */
+
 :root {
-    --bg-main: #0f172a;
-    --bg-card: #1e293b;
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --accent: #06b6d4;
-    --accent-hover: #0891b2;
-    --border-color: #334155;
+  --papel:        #eef1f3;
+  --blanco:       #ffffff;
+  --tinta:        #101820;
+  --pizarra:      #56646f;
+  --azul:         #12456f;
+  --azul-hondo:   #0d3355;
+  --azul-claro:   #9dc4e4;
+  --senal:        #2c74b3;
+  --linea:        #d6dce1;
+  --linea-azul:   rgba(255, 255, 255, .22);
+
+  --ancho:        68rem;
+  --radio:        4px;
 }
 
-/* Reseteo básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-main);
-    color: var(--text-primary);
-    line-height: 1.6;
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
 }
 
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
+h1, h2, h3,
+.roles, .boton, .periodo, .habilidades, .idiomas dt, .pie-links, .lugar {
+  font-family: Archivo, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* Header / Hero Section */
-.hero {
-    padding: 80px 0 60px 0;
-    border-bottom: 1px solid var(--border-color);
-    background: linear-gradient(180deg, rgba(30,41,59,1) 0%, rgba(15,23,42,1) 100%);
+img { display: block; max-width: 100%; height: auto; }
+
+a { color: var(--azul); }
+
+:focus-visible {
+  outline: 3px solid var(--senal);
+  outline-offset: 3px;
 }
 
-.hero-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
+.saltar {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--blanco);
+  color: var(--azul);
+  padding: .75rem 1.25rem;
+  font-family: Archivo, sans-serif;
+  z-index: 10;
+}
+.saltar:focus {
+  left: 1rem;
+  top: 1rem;
 }
 
-.hero-text h1 {
-    font-size: 2.8rem;
-    color: var(--accent);
-    margin-bottom: 10px;
+/* --------------------------------------------------------------------------
+   Portada
+   -------------------------------------------------------------------------- */
+
+.portada {
+  background: var(--azul);
+  color: var(--blanco);
+  padding: clamp(2.5rem, 7vw, 5.5rem) 1.5rem clamp(2.5rem, 6vw, 4.5rem);
+  border-bottom: 6px solid var(--azul-hondo);
+}
+
+.portada-interior {
+  max-width: var(--ancho);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+  gap: clamp(1.75rem, 4vw, 3.25rem);
+  align-items: start;
+}
+
+.retrato {
+  border-radius: 50%;
+  margin: 0;
+  background: var(--azul-hondo);
+  padding: .5rem;
+  /* box-shadow: 14px 14px 0 rgba(13, 51, 85, .55); */
+}
+
+.retrato img {
+  border-radius: 50%;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: 50% 22%;
+  filter: saturate(.92) contrast(1.02);
+}
+
+.presentacion { min-width: 0; }
+
+.lugar {
+  margin: 0 0 .9rem;
+  font-size: .8125rem;
+  font-weight: 600;
+  letter-spacing: .09em;
+  color: var(--azul-claro);
+}
+
+.portada h1 {
+  margin: 0;
+  font-size: clamp(2.6rem, 8.5vw, 5.25rem);
+  font-weight: 800;
+  line-height: .93;
+  letter-spacing: -.035em;
+  text-wrap: balance;
 }
 
 .roles {
-    font-size: 1.2rem;
-    font-weight: 300;
-    color: var(--text-secondary);
-    margin-bottom: 15px;
-    line-height: 1.4;
+  margin: clamp(1.5rem, 3vw, 2.25rem) 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--linea-azul);
+  columns: 2;
+  column-gap: 2rem;
 }
 
-.location {
-    color: var(--text-secondary);
-    margin-bottom: 25px;
-    font-size: 1rem;
+.roles li {
+  border-bottom: 1px solid var(--linea-azul);
+  padding: .5rem 0;
+  font-size: .9375rem;
+  font-weight: 500;
+  color: #e4eef6;
+  break-inside: avoid;
 }
 
-.contact-info {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+/* Botones de contacto */
+
+.contacto {
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
 }
 
-.contact-info a {
-    color: var(--text-primary);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background-color: var(--bg-card);
-    padding: 8px 16px;
-    border-radius: 20px;
-    border: 1px solid var(--border-color);
-    transition: all 0.3s ease;
+.boton {
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+  padding: .7rem 1.1rem .7rem .95rem;
+  background: var(--blanco);
+  color: var(--azul-hondo);
+  text-decoration: none;
+  border-radius: var(--radio);
+  border: 1px solid var(--blanco);
+  transition: background-color .15s ease, color .15s ease, transform .15s ease;
 }
 
-.contact-info a:hover {
-    background-color: var(--accent);
-    border-color: var(--accent);
-    color: #fff;
-    transform: translateY(-2px);
+.boton svg {
+  width: 22px;
+  height: 22px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.hero-image .image-placeholder {
-    width: 200px;
-    height: 200px;
-    background-color: var(--bg-card);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 5rem;
-    color: var(--border-color);
-    border: 4px solid var(--accent);
-    box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
+.boton-texto {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  min-width: 0;
 }
 
-/* Secciones generales */
-.section {
-    padding: 50px 0;
+.boton-que {
+  font-size: .75rem;
+  font-weight: 500;
+  color: var(--pizarra);
 }
 
-.section-title {
-    font-size: 1.5rem;
-    color: var(--accent);
-    margin-bottom: 25px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border-bottom: 2px solid var(--bg-card);
-    padding-bottom: 10px;
+.boton-dato {
+  font-size: .9375rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
 }
 
-/* Tarjetas */
-.card {
-    background-color: var(--bg-card);
-    padding: 25px;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    margin-bottom: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.boton:hover,
+.boton:focus-visible {
+  background: var(--azul-hondo);
+  color: var(--blanco);
+  border-color: var(--blanco);
+  transform: translateY(-2px);
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    border-color: var(--accent-hover);
+.boton:hover .boton-que,
+.boton:focus-visible .boton-que { color: var(--azul-claro); }
+
+.boton:active { transform: translateY(0); }
+
+/* --------------------------------------------------------------------------
+   Cuerpo
+   -------------------------------------------------------------------------- */
+
+.cuerpo {
+  max-width: var(--ancho);
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 4.5rem) 1.5rem clamp(3rem, 6vw, 5rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
 }
 
-.card h4 {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-    color: var(--text-primary);
+.bloque + .bloque { margin-top: clamp(2.25rem, 4vw, 3.25rem); }
+
+.bloque h2 {
+  margin: 0 0 1.1rem;
+  padding-bottom: .5rem;
+  border-bottom: 2px solid var(--tinta);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  letter-spacing: -.005em;
 }
 
-.card .company {
-    display: block;
-    color: var(--accent);
-    font-weight: 600;
-    margin-bottom: 5px;
+.perfil {
+  margin: 0;
+  font-size: clamp(1.125rem, 2.2vw, 1.3125rem);
+  line-height: 1.55;
+  max-width: 34em;
 }
 
-.card .date {
-    display: block;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    margin-bottom: 15px;
+/* Experiencia */
+
+.trayectoria {
+  margin: 0;
+  padding: 0 0 0 1.75rem;
+  list-style: none;
+  border-left: 1px solid var(--linea);
 }
 
-.card .subtitle {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    margin-top: 5px;
+.puesto { position: relative; }
+.puesto + .puesto { margin-top: 2.25rem; }
+
+.puesto::before {
+  content: "";
+  position: absolute;
+  left: -2.05rem;
+  top: .45rem;
+  width: 10px;
+  height: 10px;
+  background: var(--senal);
+  border-radius: 50%;
 }
 
-.languages-card p {
-    margin-bottom: 8px;
+.periodo {
+  margin: 0 0 .35rem;
+  font-size: .8125rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  color: var(--pizarra);
 }
 
-/* Grid layout para columnas */
-.grid-2-cols {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    padding-bottom: 50px;
+.puesto h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -.015em;
 }
 
-/* Habilidades (Skills) */
-.skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
+.empresa {
+  margin: .15rem 0 .7rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--azul);
 }
 
-.skill-tag {
-    background-color: rgba(6, 182, 212, 0.1);
-    color: var(--accent);
-    border: 1px solid var(--accent);
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-    cursor: default;
+.detalle {
+  margin: 0;
+  max-width: 44em;
+  color: #26313a;
 }
 
-.skill-tag:hover {
-    background-color: var(--accent);
-    color: #fff;
+.stack {
+  margin: .6rem 0 0;
+  padding-left: .85rem;
+  border-left: 3px solid var(--azul-claro);
+  font-size: .9375rem;
+  color: var(--pizarra);
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 30px 0;
-    border-top: 1px solid var(--border-color);
-    color: var(--text-secondary);
-    font-size: 0.9rem;
+/* Formación */
+
+.estudio h3 {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.35;
 }
 
-/* Responsive para dispositivos móviles */
-@media (max-width: 768px) {
-    .hero-content {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
-    
-    .contact-info {
-        justify-content: center;
-    }
-    
-    .grid-2-cols {
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
+.resolucion {
+  font-weight: 400;
+  color: var(--pizarra);
+}
+
+.institucion {
+  margin: .5rem 0 0;
+  font-style: italic;
+  color: var(--pizarra);
+}
+
+/* Lateral */
+
+.columna-lateral .bloque {
+  background: var(--blanco);
+  padding: 1.5rem 1.5rem 1.75rem;
+  border-radius: var(--radio);
+  border: 1px solid var(--linea);
+}
+
+.habilidades {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.habilidades li {
+  padding: .5rem 0;
+  border-bottom: 1px solid var(--linea);
+  font-size: .9375rem;
+  font-weight: 500;
+}
+
+.habilidades li:last-child { border-bottom: 0; padding-bottom: 0; }
+
+.idiomas {
+  margin: 0;
+  display: grid;
+  gap: .85rem;
+}
+
+.idiomas div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.idiomas dt {
+  font-size: .9375rem;
+  font-weight: 600;
+}
+
+.idiomas dd {
+  margin: 0;
+  font-size: .9375rem;
+  color: var(--pizarra);
+  text-align: right;
+}
+
+/* --------------------------------------------------------------------------
+   Pie
+   -------------------------------------------------------------------------- */
+
+.pie {
+  background: var(--azul-hondo);
+  color: var(--blanco);
+  padding: 2rem 1.5rem;
+}
+
+.pie-nombre,
+.pie-links {
+  max-width: var(--ancho);
+  margin: 0 auto;
+  font-size: .9375rem;
+}
+
+.pie-nombre {
+  font-family: Archivo, sans-serif;
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
+
+.pie-links {
+  margin-top: .6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem 1.5rem;
+}
+
+.pie-links a {
+  color: var(--azul-claro);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(157, 196, 228, .45);
+  padding-bottom: 1px;
+}
+
+.pie-links a:hover,
+.pie-links a:focus-visible { color: var(--blanco); border-bottom-color: var(--blanco); }
+
+/* --------------------------------------------------------------------------
+   Adaptación a pantallas chicas
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 62rem) {
+  .cuerpo { grid-template-columns: minmax(0, 1fr); }
+  .columna-lateral { margin-top: .5rem; }
+}
+
+@media (max-width: 46rem) {
+  .portada-interior { grid-template-columns: minmax(0, 1fr); }
+  .retrato {
+    width: min(13rem, 55vw);
+    box-shadow: 10px 10px 0 rgba(13, 51, 85, .55);
+  }
+  .roles { columns: 1; }
+  .boton { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+  .boton:hover, .boton:focus-visible { transform: none; }
+}
+
+/* --------------------------------------------------------------------------
+   Impresión
+   -------------------------------------------------------------------------- */
+
+@media print {
+  body { background: #fff; font-size: 11pt; }
+  .portada { background: #fff; color: #000; border-bottom: 2px solid #000; padding: 0 0 1rem; }
+  .lugar, .roles li { color: #333; }
+  .roles, .roles li { border-color: #bbb; }
+  .retrato { box-shadow: none; padding: 0; background: none; width: 8rem; }
+  .boton { background: none; border: 1px solid #999; color: #000; }
+  .pie { background: #fff; color: #000; border-top: 1px solid #999; }
+  .pie-links a { color: #000; }
+  .saltar { display: none; }
+  .cuerpo { padding: 1.5rem 0 0; }
 }
